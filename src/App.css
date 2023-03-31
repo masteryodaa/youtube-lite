@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+.search {
+    background-color: #0f0f0f;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.burger-menu:hover{
+    background-color: #1f1f1f;
+    cursor: pointer;    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar-items li {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 5px 0;
+    padding: 10px 15px;
+    /* background-color: gray; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.sidebar-items li:hover, .sidebar-items li:active{
+    background-color: #1f1f1f;
+    cursor: pointer;
+    border-radius: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.sidebar-items p {
+    padding: 0 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttons{
+    background-color: #1f1f1f;
+    cursor: pointer;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
 }
