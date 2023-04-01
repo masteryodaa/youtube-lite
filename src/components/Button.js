@@ -1,6 +1,6 @@
-const Button = ({name, key}) => {
+const Button = ({name}) => {
   return (
-    <div className="buttons px-4 py-2 mx-2" key={key}>{name}</div>
+    <div className="buttons px-4 py-2 mx-2">{name}</div>
   )
 }
 

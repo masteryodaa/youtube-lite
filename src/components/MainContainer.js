@@ -3,8 +3,9 @@ import ButtonList from './ButtonList'
 import VideoContainer from './VideoContainer'
 
 const Main = () => {
+  
   return (
-    <div>
+    <div className=''>
       <ButtonList />
       <VideoContainer />
     </div>

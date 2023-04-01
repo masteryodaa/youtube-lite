@@ -9,19 +9,21 @@ import { BsBroadcast } from "react-icons/bs";
 import { RiTrophyLine } from "react-icons/ri";
 import { SiYoutubegaming } from "react-icons/si";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
 
-  const isMenuOpen = useSelector(store => store.app.isMenuOpen);
-
-  if(!isMenuOpen) return null;
+  if (!isMenuOpen) return null;
 
   return (
-    <div className="sidebar-items text-white text-lg font-medium p-5">
+    <div className="sidebar-items w-[250px] text-white text-lg font-medium p-5">
       <ul>
-        <li>
-          <AiFillHome className="mr-2" /> Home
-        </li>
+        <Link to="/">
+          <li>
+            <AiFillHome className="mr-2" /> Home
+          </li>
+        </Link>
         <li>
           <FaGooglePlay className="mr-2" />
           Shorts
