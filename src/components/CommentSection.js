@@ -5,7 +5,6 @@ import Comment from "./Comment";
 
 const CommentSection = () => {
   const [comments, setComments] = useState([]);
-
   const [videoId] = useSearchParams();
 
   useEffect(() => {
@@ -29,9 +28,7 @@ const CommentSection = () => {
 
   return (
     <div className="text-white ml-6">
-      {comments && (
-        <h1 className="text-2xl font-bold ml-6 my-10">Comments</h1>
-      )}
+      {comments && <h1 className="text-2xl font-bold ml-6 my-10">Comments</h1>}
 
       {comments &&
         comments?.map((comment) => (

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { YOUTUBE_SEARCH_AUTOCOMPLETE_API } from "../utils/constants";
 import { AiOutlineSearch } from "react-icons/ai";
 import { cacheResults } from "../utils/searchSlice";
+import { Link } from "react-router-dom";
 
 const Head = () => {
   const dispatch = useDispatch();
@@ -88,9 +89,9 @@ const Head = () => {
             </svg>
           </div>
           <div className="logo text-white">
-            <div to="/">
+            <Link to="/">
               <img src={youtube} alt="youtube" className="w-[100px]" />
-            </div>
+            </Link>
           </div>
         </div>
 

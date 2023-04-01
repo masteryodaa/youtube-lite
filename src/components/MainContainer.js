@@ -1,15 +1,22 @@
-import React from 'react'
-import ButtonList from './ButtonList'
-import VideoContainer from './VideoContainer'
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { openMenu } from "../utils/appSlice";
+import ButtonList from "./ButtonList";
+import VideoContainer from "./VideoContainer";
 
 const Main = () => {
-  
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(openMenu());
+  }, []);
+
   return (
-    <div className=''>
+    <div className="">
       <ButtonList />
       <VideoContainer />
     </div>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
