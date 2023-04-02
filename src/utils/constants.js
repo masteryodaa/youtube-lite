@@ -11,3 +11,5 @@ export const YOUTUBE_COMMENT_THREADS_API =
   "https://youtube.googleapis.com/youtube/v3/commentThreads?order=relevance&part=snippet&maxResults=50&textFormat=plainText&key=" +
   GOOGLE_API_KEY +
   "&videoId=";
+
+export const LIVE_CHAT_COUNT = 50;

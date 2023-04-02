@@ -1,11 +1,12 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
-import WatchPage from "./components/WatchPage";
+// import WatchPage from "./components/WatchPage";
+const WatchPage = lazy(() => import("./components/WatchPage"));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -20,7 +21,11 @@ const route = createBrowserRouter([
       },
       {
         path: "/watch",
-        element: <WatchPage />,
+        element: (
+          <Suspense fallback={<div className="text-white text-3xl">Loading...</div>}>
+            <WatchPage />
+          </Suspense>
+        ),
       },
     ],
   },
