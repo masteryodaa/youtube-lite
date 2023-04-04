@@ -13,3 +13,7 @@ REACT_APP_GOOGLE_API_KEY
 and set it to your Google API key.
 
 The app will not run without this variable.
+
+---
+
+PS: I'm not very good at CSS, so if you have any suggestions, pull requests are welcome.
