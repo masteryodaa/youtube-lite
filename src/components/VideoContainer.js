@@ -7,6 +7,7 @@ const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
+    document.title = "YouTube";
     getVideos();
   }, []);
 

@@ -35,6 +35,11 @@ const Head = () => {
     }
   };
 
+  const onClickSearch = () => {
+    // setSearchQuery("");
+    setShowSuggestions(false);
+  };
+
   const getSuggestions = async (query) => {
     const response = await fetch(YOUTUBE_SEARCH_AUTOCOMPLETE_API + query);
     const data = await response.json();
@@ -102,28 +107,42 @@ const Head = () => {
                 type="text"
                 value={searchQuery}
                 onFocus={handleOnFocus}
-                onBlur={() => setShowSuggestions(false)}
+                // onBlur={() => setShowSuggestions(false)}0
                 onChange={handleOnChange}
                 placeholder="Search"
                 className="search rounded-l-full w-5/6 h-10 px-4 outline outline-1 outline-gray-500 focus:outline-sky-500 "
               />
 
-              <button className="search-btn rounded-r-full px-4 py-2 outline outline-1 outline-gray-500">
+              <Link
+                to={
+                  searchQuery
+                    ? "/results?search_query=" + searchQuery
+                    : "/results"
+                }
+                className="search-btn rounded-r-full px-4 py-2 outline outline-1 outline-gray-500"
+              >
                 <IoIosSearch className="text-2xl" />
-              </button>
+              </Link>
             </div>
 
             {showSuggestions && (
               <div className="suggestion flex flex-wrap text-black fixed mt-2 w-[41%] bg-white rounded-lg">
                 <ul className="suggestion-list my-2 w-[-webkit-fill-available]">
                   {suggestions.map((suggestion, id) => (
-                    <li
+                    <Link
                       key={id}
-                      className="suggestion-item font-bold flex items-center py-2 hover:cursor-default hover:bg-gray-200"
+                      to={
+                        suggestion
+                          ? "/results?search_query=" + suggestion
+                          : "/results"
+                      }
+                      onClick={onClickSearch}
                     >
-                      <AiOutlineSearch className="mx-4 ml-6" />
-                      {suggestion}
-                    </li>
+                      <li className="suggestion-item font-bold flex items-center py-2 hover:cursor-default hover:bg-gray-200">
+                        <AiOutlineSearch className="mx-4 ml-6" />
+                        {suggestion}
+                      </li>
+                    </Link>
                   ))}
                 </ul>
               </div>

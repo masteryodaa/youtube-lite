@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 // import WatchPage from "./components/WatchPage";
 const WatchPage = lazy(() => import("./components/WatchPage"));
+const Search = lazy(() => import("./components/Search"));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -22,8 +23,20 @@ const route = createBrowserRouter([
       {
         path: "/watch",
         element: (
-          <Suspense fallback={<div className="text-white text-3xl">Loading...</div>}>
+          <Suspense
+            fallback={<div className="text-white text-3xl">Loading...</div>}
+          >
             <WatchPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/results",
+        element: (
+          <Suspense
+            fallback={<div className="text-white text-3xl">Loading...</div>}
+          >
+            <Search />
           </Suspense>
         ),
       },

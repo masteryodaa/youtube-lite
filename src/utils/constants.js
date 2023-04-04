@@ -12,4 +12,19 @@ export const YOUTUBE_COMMENT_THREADS_API =
   GOOGLE_API_KEY +
   "&videoId=";
 
+export const YOUTUBE_SEARCH_RESULTS =
+  "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&key=" +
+  GOOGLE_API_KEY +
+  "&q=";
+
+export const CHANNEL_INFO =
+  "https://youtube.googleapis.com/youtube/v3/channels?part=snippet&key=" +
+  GOOGLE_API_KEY +
+  "&id=";
+
+export const YOUTUBE_VIDEO_INFO =
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key=" +
+  GOOGLE_API_KEY +
+  "&id=";
+
 export const LIVE_CHAT_COUNT = 50;
